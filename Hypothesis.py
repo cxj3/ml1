@@ -59,7 +59,8 @@ def app():
     # Ploting the graph below
     # confidence interval with critical value 0.05
     ci = stats.norm.interval(0.95, Home_and_lifestyle_gross_income.mean(), Home_and_lifestyle_gross_income.std())
-    plt.figure(figsize=(16,5))
+    fig, ax = plt.subplots(figsize=(16,5))
+
     sns.distplot(Home_and_lifestyle_pop, label='Home and lifestyle',color='blue')
     sns.distplot(Fashion_accessories_pop, label='Fashion accessories',color='red')
 
@@ -73,11 +74,10 @@ def app():
     plt.axvline(Home_and_lifestyle_pop.mean()+t_stat*Home_and_lifestyle_pop.std(), color='black', linestyle='dashed', linewidth=2, label = 'Alternative Hypothesis')
     plt.axvline(Home_and_lifestyle_pop.mean()-t_stat*Home_and_lifestyle_pop.std(), color='black', linestyle='dashed', linewidth=2)
 
-    plt.legend()
+    ax.legend()
+    st.pyplot(fig)
 
     st.subheader('Conclusion')
     st.write(
     'Based on the hypothesis test, we can conclude that the H0 is accepted. The Average gross income of Home and lifestyle is **not significantly different** from the average gross income of Sports and travel.'
     )
-
-    
