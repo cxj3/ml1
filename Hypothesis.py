@@ -12,7 +12,7 @@ def app():
     st.markdown('Hypothesis')
 
     ### import dataset
-    df = pd.read_csv('supermarket_sales - Sheet1.csv')
+    df = pd.read_csv('https://github.com/cxj3/ml1/blob/b90c55980d7360d49d4e8cea0aa044cb300891b9/supermarket_sales%20-%20Sheet1.csv')
 
     st.title('Two Sample TTest - Hypothesis Testing')
     st.write(
