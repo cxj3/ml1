@@ -15,7 +15,7 @@ def app():
 
 
     ############### Import Data
-    df = pd.read_csv('/Users/charissa.janto/Desktop/Hactiv8/GitHub/Milestone/supermarket_sales - Sheet1.csv')
+    df = pd.read_csv('/Users/charissa.janto/Desktop/Hactiv8/GitHub/Milestone/ml1/supermarket_sales - Sheet1.csv')
     lowercase = lambda x: str(x).lower()
     df.rename(lowercase, axis='columns', inplace=True)
     df['date'] = pd.to_datetime(df['date']).dt.strftime('%d-%m-%y')
