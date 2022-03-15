@@ -1,20 +1,17 @@
+from turtle import home
 import Hypothesis
 import Data_Visualisation
+import Home
 import streamlit as st
-import pandas as pd
-import numpy as np
-import scipy as stats
-import scipy.stats as stats
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 
 st.set_page_config(
-    page_title="Ex-stream-ly Cool App",
-    page_icon="🧊")
+    page_title="Supermarket Analysis",
+    page_icon="🍔")
     
 
 PAGES = {
+    "Home": Home,
     "Data Visualisation": Data_Visualisation,
     "Hypothesis Testing": Hypothesis
 }

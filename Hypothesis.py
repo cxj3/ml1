@@ -7,17 +7,18 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 def app():
-    st.title('Sales - Analysis and Visualization')
-    st.subheader('By: Charissa Janto - Batch 09')
-    st.markdown('Hypothesis')
+    st.title('Supermarket Sales - Hypothesis')
 
     ### import dataset
-    df = pd.read_csv('supermarket_sales - Sheet1.csv')
+    df = pd.read_csv('/Users/charissa.janto/Desktop/Hactiv8/GitHub/Phase 0/Milestone/ml1/supermarket_sales - Sheet1.csv')
 
-    st.title('Two Sample TTest - Hypothesis Testing')
+    Product_Line_Gross_Income = df[['Product line','gross income']].groupby('Product line').mean()
+    st.write(Product_Line_Gross_Income.sort_values(by='gross income', ascending=False,))
+
     st.write(
-    "We found that most funded the most successful (biggest average gross profit) is coming from Home and lifestyle and the least successful (lowest average gross profit) is coming from Sports and travel. Lets check how both categories compared."
+    "From the table above it's clear that the most successful (biggest average gross income) is coming from Home and lifestyle and the least successful (lowest average gross income) is coming from Sports and travel. Lets check how both categories compared."
     )
+
 
     # Query data of Gross income in Product line = Home and lifestyle
     Home_and_lifestyle = df[df['Product line'] == ('Home and lifestyle')]
@@ -30,7 +31,7 @@ def app():
     Fashion_accessories_gross_income
 
     
-    st.subheader('The Hypothesis is:')
+    st.subheader('Two Sample TTest - The Hypothesis is:')
     st.write(
     '- Null Hypothesis (H0):μHome and lifestyle = μSports and travel'
     '(Average gross income of Home and lifestyle is **not significantly different** from the average gross income of Sports and travel)'
