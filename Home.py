@@ -6,7 +6,7 @@ def app():
     st.write('By: Charissa Janto - Batch 09')
 
 ############### Import Data
-    df = pd.read_csv('/Users/charissa.janto/Desktop/Hactiv8/GitHub/Phase 0/Milestone/ml1/supermarket_sales - Sheet1.csv')
+    df = pd.read_csv('supermarket_sales - Sheet1.csv')
     lowercase = lambda x: str(x).lower()
     df.rename(lowercase, axis='columns', inplace=True)
 
