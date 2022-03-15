@@ -10,7 +10,7 @@ def app():
     st.title('Supermarket Sales - Hypothesis')
 
     ### import dataset
-    df = pd.read_csv('/Users/charissa.janto/Desktop/Hactiv8/GitHub/Phase 0/Milestone/ml1/supermarket_sales - Sheet1.csv')
+    df = pd.read_csv('supermarket_sales - Sheet1.csv')
 
     Product_Line_Gross_Income = df[['Product line','gross income']].groupby('Product line').mean()
     st.write(Product_Line_Gross_Income.sort_values(by='gross income', ascending=False,))
