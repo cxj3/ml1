@@ -1,4 +1,3 @@
-from turtle import home
 import Hypothesis
 import Data_Visualisation
 import Home
