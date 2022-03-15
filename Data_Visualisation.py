@@ -17,7 +17,7 @@ def app():
     st.title('Sales - Analysis and Visualization')
 
     ############### Import Data
-    df = pd.read_csv('/Users/charissa.janto/Desktop/Hactiv8/GitHub/Phase 0/Milestone/ml1/supermarket_sales - Sheet1.csv')
+    df = pd.read_csv('supermarket_sales - Sheet1.csv')
     lowercase = lambda x: str(x).lower()
     df.rename(lowercase, axis='columns', inplace=True)
     df['date']=  pd.to_datetime(df['date'], format = '%m/%d/%Y').dt.date
